@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Manager Dashboard - MUJ Cab Service</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Travel Manager Dashboard</h1>
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                    <li><a href="#" id="logout">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section class="approved-requests">
+            <h2>Approved Requests (Pending Your Action)</h2>
+            
+            <div class="request-cards">
+                <div class="request-card">
+                    <h3>Mr. Rajesh Sharma (Google)</h3>
+                    <p><strong>Approved by:</strong> Approver X</p>
+                    <p><strong>Visit Date:</strong> 2023-11-20</p>
+                    <p><strong>Flight Details:</strong> AI 101, Arriving 10:30 AM</p>
+                    <p><strong>Pickup Location:</strong> Jaipur International Airport</p>
+                    
+                    <div class="driver-assignment">
+                        <h4>Assign Driver</h4>
+                        <select class="driver-select">
+                            <option value="">Select Driver</option>
+                            <option value="driver1">Ramesh Kumar (Toyota Innova - RJ14 AB 1234)</option>
+                            <option value="driver2">Suresh Patel (Maruti Ertiga - RJ14 CD 5678)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="actions">
+                        <button class="btn-final-approve">Final Approve & Notify</button>
+                        <button class="btn-reject">Reject</button>
+                        <button class="btn-sm">View Full Details</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="upcoming-trips">
+            <h2>Upcoming Trips</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Guest</th>
+                        <th>Company</th>
+                        <th>Driver Assigned</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2023-11-18</td>
+                        <td>Ms. Priya Patel</td>
+                        <td>Microsoft</td>
+                        <td>Ramesh Kumar (Innova)</td>
+                        <td class="confirmed">Confirmed</td>
+                    </tr>
+                    <tr>
+                        <td>2025-11-20</td>
+                        <td>Mr. Rajesh Sharma</td>
+                        <td>Google</td>
+                        <td>-</td>
+                        <td class="pending">Pending</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    
+    <script src="../../js/script.js"></script>
+</body>
+</html>

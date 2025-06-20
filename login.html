@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - MUJ Cab Service</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Login to Portal</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="role">Role</label>
+                    <select id="role" required>
+                        <option value="">Select your role</option>
+                        <option value="admin">Admin</option>
+                        <option value="coordinator">Placement Coordinator</option>
+                        <option value="approver">Approver</option>
+                        <option value="travel_manager">Travel Manager</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                
+                <!-- New User Button - Only visible to Admin -->
+                <div id="newUserContainer" style="display: none;">
+                    <div class="divider">or</div>
+                    <button type="button" id="newUserBtn" class="btn btn-secondary">Create New User</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+<!-- At the end of body -->
+<script type="module">
+    import db from '../js/db.js';
+    import { checkAuth } from '../js/auth.js';
+    
+    // If already logged in, redirect to dashboard
+    if (checkAuth()) {
+        const user = JSON.parse(sessionStorage.getItem('currentUser'));
+        window.location.href = `${user.role}/dashboard.html`;
+    }
+    
+    document.getElementById('loginForm').addEventListener('submit', (e) => {
+        // Your login logic
+    });
+</script>
+</html>

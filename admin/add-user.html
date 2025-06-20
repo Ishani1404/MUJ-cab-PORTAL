@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Users - Admin | MUJ Cab Service</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Add New Users</h1>
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="add-user.html" class="active">Add Users</a></li>
+                    <li><a href="#" id="logout">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="form-container">
+            <form id="addUserForm">
+                <div class="form-section">
+                    <h3>User Information</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName" class="required-field">Full Name</label>
+                            <input type="text" id="fullName" name="fullName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="required-field">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone" class="required-field">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="department">Department</label>
+                            <input type="text" id="department" name="department">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Account Details</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="userRole" class="required-field">User Role</label>
+                            <select id="userRole" name="userRole" required>
+                                <option value="">Select role</option>
+                                <option value="coordinator">Placement Coordinator</option>
+                                <option value="approver">Approver</option>
+                                <option value="travel_manager">Travel Manager</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="username" class="required-field">Username</label>
+                            <input type="text" id="username" name="username" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="password" class="required-field">Temporary Password</label>
+                            <div class="password-input">
+                                <input type="password" id="password" name="password" required>
+                                <button type="button" class="btn-generate" id="generatePassword">Generate</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword" class="required-field">Confirm Password</label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sendEmail">
+                            <input type="checkbox" id="sendEmail" name="sendEmail" checked>
+                            Send welcome email with login instructions
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-cancel" onclick="window.location.href='dashboard.html'">Cancel</button>
+                    <button type="submit" class="btn">Create User</button>
+                </div>
+            </form>
+        </div>
+
+        <section class="existing-users">
+            <h2>Existing Users</h2>
+            <div class="filter-options">
+                <button class="btn-filter active" data-filter="all">All</button>
+                <button class="btn-filter" data-filter="coordinator">Coordinators</button>
+                <button class="btn-filter" data-filter="approver">Approvers</button>
+                <button class="btn-filter" data-filter="travel_manager">Travel Managers</button>
+            </div>
+
+            <div class="users-table-container">
+                <table class="users-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-role="coordinator">
+                            <td>Rahul Sharma</td>
+                            <td>rahul.sharma@muj.edu.in</td>
+                            <td>Placement Coordinator</td>
+                            <td class="active">Active</td>
+                            <td>
+                                <button class="btn-sm btn-edit">Edit</button>
+                                <button class="btn-sm btn-delete">Delete</button>
+                                <button class="btn-sm btn-reset">Reset Password</button>
+                            </td>
+                        </tr>
+                        <tr data-role="approver">
+                            <td>Priya Patel</td>
+                            <td>priya.patel@muj.edu.in</td>
+                            <td>Approver</td>
+                            <td class="active">Active</td>
+                            <td>
+                                <button class="btn-sm btn-edit">Edit</button>
+                                <button class="btn-sm btn-delete">Delete</button>
+                                <button class="btn-sm btn-reset">Reset Password</button>
+                            </td>
+                        </tr>
+                        <tr data-role="travel_manager">
+                            <td>Amit Kumar</td>
+                            <td>amit.kumar@muj.edu.in</td>
+                            <td>Travel Manager</td>
+                            <td class="active">Active</td>
+                            <td>
+                                <button class="btn-sm btn-edit">Edit</button>
+                                <button class="btn-sm btn-delete">Delete</button>
+                                <button class="btn-sm btn-reset">Reset Password</button>
+                            </td>
+                        </tr>
+                        <tr data-role="coordinator">
+                            <td>Neha Gupta</td>
+                            <td>neha.gupta@muj.edu.in</td>
+                            <td>Placement Coordinator</td>
+                            <td class="inactive">Inactive</td>
+                            <td>
+                                <button class="btn-sm btn-edit">Edit</button>
+                                <button class="btn-sm btn-delete">Delete</button>
+                                <button class="btn-sm btn-reset">Reset Password</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="../../js/script.js"></script>
+</body>
+<script type="module">
+    import db from '../../js/db.js';
+    
+    // Load existing users
+    function loadUsers() {
+      const users = db.getUsers();
+      const tableBody = document.querySelector('.users-table tbody');
+      tableBody.innerHTML = users.map(user => `
+        <tr>
+          <td>${user.name}</td>
+          <td>${user.email}</td>
+          <td>${user.role}</td>
+          <td>${user.isActive ? 'Active' : 'Inactive'}</td>
+        </tr>
+      `).join('');
+    }
+    
+    // Handle form submission
+    document.getElementById('addUserForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const newUser = {
+        name: document.getElementById('fullName').value,
+        email: document.getElementById('email').value,
+        password: document.getElementById('password').value,
+        phone: document.getElementById('phone').value,
+        role: document.getElementById('userRole').value,
+        department: document.getElementById('department').value
+      };
+      
+      db.createUser(newUser);
+      alert('User created successfully!');
+      loadUsers(); // Refresh the table
+      e.target.reset(); // Clear the form
+    });
+    
+    // Load users when page loads
+    document.addEventListener('DOMContentLoaded', loadUsers);
+  </script>
+</html>

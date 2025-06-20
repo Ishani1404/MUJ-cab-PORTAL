@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Cab Request - MUJ Cab Service</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>New Cab Request</h1>
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="add-request.html" class="active">New Request</a></li>
+                    <li><a href="#" id="logout">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="form-container">
+            <form id="cabRequestForm">
+                <!-- Leader Information Section -->
+                <div class="form-section">
+                    <h3>Leader Information</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="leaderName" class="required-field">Full Name</label>
+                            <input type="text" id="leaderName" name="leaderName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="position" class="required-field">Position</label>
+                            <input type="text" id="position" name="position" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="company" class="required-field">Company Name</label>
+                            <input type="text" id="company" name="company" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="industry">Industry</label>
+                            <input type="text" id="industry" name="industry">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Information Section -->
+                <div class="form-section">
+                    <h3>Contact Information</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email" class="required-field">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" class="required-field">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="alternatePhone">Alternate Phone</label>
+                            <input type="tel" id="alternatePhone" name="alternatePhone">
+                        </div>
+                        <div class="form-group">
+                            <label for="whatsappAvailable">
+                                <input type="checkbox" id="whatsappAvailable" name="whatsappAvailable"> 
+                                Available on WhatsApp
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Visit Details Section -->
+                <div class="form-section">
+                    <h3>Visit Details</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="visitPurpose" class="required-field">Purpose of Visit</label>
+                            <select id="visitPurpose" name="visitPurpose" required>
+                                <option value="">Select purpose</option>
+                                <option value="placement">Placement Drive</option>
+                                <option value="guest_lecture">Guest Lecture/Talk</option>
+                                <option value="meeting">Business Meeting</option>
+                                <option value="workshop">Workshop</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="visitDate" class="required-field">Visit Date</label>
+                            <input type="date" id="visitDate" name="visitDate" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expectedGuests">Number of Guests</label>
+                            <input type="number" id="expectedGuests" name="expectedGuests" min="1" value="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="specialRequirements">Special Requirements</label>
+                            <input type="text" id="specialRequirements" name="specialRequirements" placeholder="Wheelchair, etc.">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="additionalInfo">Additional Information</label>
+                        <textarea id="additionalInfo" name="additionalInfo"></textarea>
+                    </div>
+                </div>
+                
+                <!-- Travel Details Section -->
+                <div class="form-section">
+                    <h3>Travel Details</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="travelType" class="required-field">Travel Type</label>
+                            <select id="travelType" name="travelType" required>
+                                <option value="">Select travel type</option>
+                                <option value="flight">Flight</option>
+                                <option value="train">Train</option>
+                                <option value="personal_vehicle">Personal Vehicle</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="arrivalDate" class="required-field">Arrival Date</label>
+                            <input type="date" id="arrivalDate" name="arrivalDate" required>
+                        </div>
+                    </div>
+                    
+                    <div id="flightDetails">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="flightNumber">Flight Number</label>
+                                <input type="text" id="flightNumber" name="flightNumber">
+                            </div>
+                            <div class="form-group">
+                                <label for="airline">Airline</label>
+                                <input type="text" id="airline" name="airline">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="arrivalTime">Arrival Time</label>
+                                <input type="time" id="arrivalTime" name="arrivalTime">
+                            </div>
+                            <div class="form-group">
+                                <label for="arrivalAirport">Arrival Airport/Station</label>
+                                <input type="text" id="arrivalAirport" name="arrivalAirport" value="Jaipur International Airport">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pickupLocation" class="required-field">Pickup Location</label>
+                            <input type="text" id="pickupLocation" name="pickupLocation" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="dropLocation" class="required-field">Drop Location</label>
+                            <input type="text" id="dropLocation" name="dropLocation" required value="Manipal University Jaipur">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="returnDate">Return Date (if known)</label>
+                            <input type="date" id="returnDate" name="returnDate">
+                        </div>
+                        <div class="form-group">
+                            <label for="returnTime">Return Time</label>
+                            <input type="time" id="returnTime" name="returnTime">
+                        </div>
+                    </div>
+                    
+                    <div id="returnFlightDetails" style="display: none;">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="returnFlightNumber">Return Flight Number</label>
+                                <input type="text" id="returnFlightNumber" name="returnFlightNumber">
+                            </div>
+                            <div class="form-group">
+                                <label for="returnAirline">Return Airline</label>
+                                <input type="text" id="returnAirline" name="returnAirline">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Approver Selection -->
+                <div class="form-section">
+                    <h3>Approver Selection</h3>
+                    <div class="form-group">
+                        <label for="approver" class="required-field">Select Approver</label>
+                        <select id="approver" name="approver" required>
+                            <option value="">Select approver</option>
+                            <option value="approver1">Mr. Amit Sharma (Approver 1)</option>
+                            <option value="approver2">Ms. Priya Patel (Approver 2)</option>
+                            <option value="approver3">Dr. Rajesh Kumar (Approver 3)</option>
+                        </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="urgency">Urgency Level</label>
+                            <select id="urgency" name="urgency">
+                                <option value="normal">Normal</option>
+                                <option value="high">High Priority</option>
+                                <option value="urgent">Urgent</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Form Actions -->
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-cancel" onclick="window.location.href='dashboard.html'">Cancel</button>
+                        <button type="submit" class="btn">Submit Request</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+        
+        <script src="../../js/script.js"></script>
+    </body>
+    </html>

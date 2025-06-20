@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Approver Dashboard - MUJ Cab Service</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Approver Dashboard</h1>
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                    <li><a href="#" id="logout">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section class="pending-requests">
+            <h2>Pending Requests for Approval</h2>
+            
+            <div class="request-cards">
+                <div class="request-card">
+                    <h3>Mr. Rajesh Sharma (Google)</h3>
+                    <p><strong>Submitted by:</strong> Coordinator A</p>
+                    <p><strong>Visit Date:</strong> 2023-11-20</p>
+                    <p><strong>Flight Details:</strong> AI 101, Arriving 10:30 AM</p>
+                    <p><strong>Pickup Location:</strong> Jaipur International Airport</p>
+                    <div class="actions">
+                        <button class="btn-approve">Approve</button>
+                        <button class="btn-reject">Reject</button>
+                        <button class="btn-sm">View Full Details</button>
+                    </div>
+                </div>
+                
+                <div class="request-card">
+                    <h3>Ms. Neha Gupta (Amazon)</h3>
+                    <p><strong>Submitted by:</strong> Coordinator B</p>
+                    <p><strong>Visit Date:</strong> 2023-11-22</p>
+                    <p><strong>Flight Details:</strong> UK 789, Arriving 4:45 PM</p>
+                    <p><strong>Pickup Location:</strong> Jaipur International Airport</p>
+                    <div class="actions">
+                        <button class="btn-approve">Approve</button>
+                        <button class="btn-reject">Reject</button>
+                        <button class="btn-sm">View Full Details</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="recent-activity">
+            <h2>Your Recent Actions</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Request</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2023-11-14</td>
+                        <td>Mr. Amit Patel (TCS)</td>
+                        <td class="approved">Approved</td>
+                    </tr>
+                    <tr>
+                        <td>2023-11-13</td>
+                        <td>Ms. Sneha Reddy (Infosys)</td>
+                        <td class="rejected">Rejected</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    
+    <script src="../../js/script.js"></script>
+</body>
+</html>
